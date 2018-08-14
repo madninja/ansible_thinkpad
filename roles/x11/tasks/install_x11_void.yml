@@ -39,15 +39,6 @@
     group: root
     mode: 0755
 
-- name: set keyboard layout to dvorak
-  become: yes
-  copy:
-    src: 20-keyboard_dvorak.conf
-    dest: /etc/X11/xorg.conf.d/20-keyboard_dvorak.conf
-    owner: root
-    group: root
-    mode: 0744
-
 # this will be run via .xinitrc
 - name: install dunst notification server
   become: yes

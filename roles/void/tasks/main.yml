@@ -65,16 +65,6 @@
     group: root
     mode: 0770
 
-- name: set console keymap to dvorak
-  become: yes
-  lineinfile:
-    backup: yes
-    state: present
-    create: yes
-    path: /etc/rc.conf
-    regexp: '^#?KEYMAP='
-    line: 'KEYMAP="dvorak ctrl"'
-
 - name: set hardware clock to UTC
   become: yes
   lineinfile:
