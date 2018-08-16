@@ -28,6 +28,7 @@
     - xsel
     - xclip
     - xvkbd
+    - redshift
 
 - name: set up xorg.conf.d directory
   when: ansible_distribution == "void"
