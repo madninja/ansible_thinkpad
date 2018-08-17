@@ -8,6 +8,7 @@
     state: latest
   with_items:
     - erlang
+    - valgrind-devel
 
 - name: ensure destination directories exist (Erlang)
   file:
@@ -16,7 +17,7 @@
   with_items:
     - "{{ansible_env.HOME}}/tmp/git/"
     - "{{ansible_env.HOME}}/bin/"
-    
+
 - name: clone rebar3
   git:
     repo: https://github.com/erlang/rebar3.git
