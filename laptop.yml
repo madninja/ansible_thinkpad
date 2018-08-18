@@ -5,6 +5,7 @@
     - { role: void, when: ansible_distribution == "void" }
     - laptop
     - { role: git_homedir, when: install_git_homedir }
+    - { role: rcm_dotfiles, when: install_rcm_dotfiles }
     - { role: x11, when: use_x11 }
     - dev
     - { role: phone, when: install_phone_tools }

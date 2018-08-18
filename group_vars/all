@@ -13,6 +13,8 @@ host_timezone: America/Detroit
 install_git_homedir: false
 preferred_shell: oksh
 
+install_rcm_dotfiles: false
+
 install_av: false
 install_games: false
 install_virtualization: false

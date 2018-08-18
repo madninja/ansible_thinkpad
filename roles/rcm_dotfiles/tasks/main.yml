@@ -1,0 +1,20 @@
+---
+
+- name: install rcp packages
+  when: ansible_distribution == "void"
+  become: yes
+  xbps:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - rcm
+
+- name: clone dotfiles git repo in ~
+  when: vc_host_path is defined
+  git:
+    repo: 'ssh://{{vc_host_path}}/{{rcm_dotfiles_repo_name}}'
+    dest: '{{ansible_env.HOME}}/.dotfiles'
+    update: no
+    accept_hostkey: true
+  notify:
+    - install dotfiles
